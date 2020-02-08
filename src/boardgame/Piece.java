@@ -14,14 +14,6 @@ public abstract class Piece {
 		return board;
 	}
 
-	public abstract boolean[][] possibleMoves();
-
-	public boolean posibleMovie(Position position) {
-
-		return possibleMoves()[position.getRow()][position.getColumn()];
-
-	}
-
 	public boolean isThereAnyPossibleMove() {
 		boolean[][] mat = possibleMoves();
 		for (int i = 0; i < mat.length; i++) {
@@ -32,5 +24,13 @@ public abstract class Piece {
 			}
 		}
 		return false;
+	}
+	
+	public abstract boolean[][] possibleMoves();
+
+	public boolean posibleMovie(Position position) {
+
+		return possibleMoves()[position.getRow()][position.getColumn()];
+
 	}
 }
